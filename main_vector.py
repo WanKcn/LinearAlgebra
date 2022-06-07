@@ -7,3 +7,6 @@ if __name__ == "__main__":
     print(len(vec))
     for i in range(0, len(lst)):
         print("vec[{}] = {}".format(i, vec[i]), end=" ")
+    print("\n")
+    print(repr(vec))
+    del vec

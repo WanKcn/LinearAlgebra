@@ -16,3 +16,6 @@ class Vector:
 
     def __str__(self):
         return "({})".format(", ".join(str(e) for e in self._values))
+
+    def __del__(self):
+        print("\nReleased.\n")
