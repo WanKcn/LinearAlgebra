@@ -17,3 +17,5 @@ if __name__ == "__main__":
     print("{} - {} = {}".format(vec1, vec2, vec1 - vec2))
     print("{} * {} = {}".format(vec3, 3, vec3 * 3))
     print("{} * {} = {}".format(3, vec3, 3 * vec3))
+    print("+{} = {}".format(vec3, +vec3))
+    print("-{} = {}".format(vec3, -vec3))

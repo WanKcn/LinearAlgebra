@@ -39,6 +39,14 @@ class Vector:
         """返回数量乘法的结果向量 k * self """
         return self * k
 
+    def __pos__(self):
+        """数量乘法特殊情况：返回向量取正"""
+        return 1 * self
+
+    def __neg__(self):
+        """数量乘法特殊情况：返回向量取负"""
+        return -1 * self
+
     def __repr__(self):
         return "Vector({})".format(self._values)
 
