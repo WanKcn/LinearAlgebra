@@ -28,8 +28,16 @@ class Vector:
 
     def __sub__(self, other):
         assert len(self) == len(other), \
-            "Error is subbing, Length of vectors must be same."
+            "Error is subtracting, Length of vectors must be same."
         return Vector([a - b for a, b in zip(self, other)])
+
+    def __mul__(self, k):
+        """返回数量乘法的结果向量 self * k """
+        return Vector([k * e for e in self])
+
+    def __rmul__(self, k):
+        """返回数量乘法的结果向量 k * self """
+        return self * k
 
     def __repr__(self):
         return "Vector({})".format(self._values)

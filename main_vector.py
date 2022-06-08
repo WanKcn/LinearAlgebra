@@ -11,5 +11,9 @@ if __name__ == "__main__":
 
     vec1 = Vector([5, 3])
     vec2 = Vector([2, 1])
+    vec3 = Vector([4, 2])
+
     print("{} + {} = {}".format(vec1, vec2, vec1 + vec2))
     print("{} - {} = {}".format(vec1, vec2, vec1 - vec2))
+    print("{} * {} = {}".format(vec3, 3, vec3 * 3))
+    print("{} * {} = {}".format(3, vec3, 3 * vec3))
