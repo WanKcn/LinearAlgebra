@@ -21,7 +21,8 @@ class Vector:
 
     def normalize(self):
         """返回向量的单位向量"""
-        return 1 / self.norm() * Vector(self._values)
+        # return 1 / self.norm() * Vector(self._values)
+        return Vector(self._values) / self.norm()  # 需要定义数量除法
 
     def __getitem__(self, index):
         """获取向量的某一维度"""
@@ -62,6 +63,10 @@ class Vector:
     def __neg__(self):
         """数量乘法特殊情况：返回向量取负"""
         return -1 * self
+
+    def __truediv__(self, k):
+        """返回数量除法的结果向量 self / k """
+        return (1 / k) * self
 
     def __repr__(self):
         return "Vector({})".format(self._values)
