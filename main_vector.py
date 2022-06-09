@@ -19,3 +19,8 @@ if __name__ == "__main__":
     print("{} * {} = {}".format(3, vec3, 3 * vec3))
     print("+{} = {}".format(vec3, +vec3))
     print("-{} = {}".format(vec3, -vec3))
+
+    zero2 = Vector.zero(2)
+    print(zero2)
+    # 任意向量+零向量等于它本身
+    print("{} + {} = {}".format(vec1, zero2, vec1 + zero2))

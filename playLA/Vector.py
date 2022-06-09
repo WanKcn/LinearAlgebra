@@ -7,6 +7,11 @@ class Vector:
         # 构造传进来的list是一个引用，如果在外部对list进行修改会影响Vector的self._values
         self._values = list(lst)  # copy一份lst避免上述风险
 
+    @classmethod
+    def zero(cls, dim):
+        """返回一个dim维度的零向量"""
+        return cls([0] * dim)
+
     def __getitem__(self, index):
         """获取向量的某一维度"""
         return self._values[index]
