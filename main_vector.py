@@ -37,3 +37,9 @@ if __name__ == "__main__":
     # 单位向量求模应该为1
     print(vec1.normalize().norm())
     print(vec2.normalize().norm())
+
+    # 0向量的特殊异常处理
+    try:
+        zero2.normalize()
+    except ZeroDivisionError:
+        print("Cannot normalize zero vector {}.".format(zero2))

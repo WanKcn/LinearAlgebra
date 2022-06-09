@@ -1,3 +1,4 @@
+from ._global import EPSILON
 import math
 
 
@@ -21,6 +22,12 @@ class Vector:
 
     def normalize(self):
         """返回向量的单位向量"""
+        # if self.norm() == 0:
+        # 当self.norm()表示为浮点数，与0不能直接使用==进行判断
+        # 判断两个数字之间的距离小于某一非常小的精度值，可以认为两个数是相等的
+        if self.norm() < EPSILON:
+            raise ZeroDivisionError("Normalize error! norm is zero.")
+
         # return 1 / self.norm() * Vector(self._values)
         return Vector(self._values) / self.norm()  # 需要定义数量除法
 
