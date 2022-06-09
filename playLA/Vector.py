@@ -1,3 +1,6 @@
+import math
+
+
 class Vector:
     """
     数学类设计为不可更改的类，向量类对象在进行运算时，不对类内的值进行修改，将运算结果以新对象返回
@@ -11,6 +14,14 @@ class Vector:
     def zero(cls, dim):
         """返回一个dim维度的零向量"""
         return cls([0] * dim)
+
+    def norm(self):
+        """返回向量的模"""
+        return math.sqrt(sum(e ** 2 for e in self))
+
+    def normalize(self):
+        """返回向量的单位向量"""
+        return 1 / self.norm() * Vector(self._values)
 
     def __getitem__(self, index):
         """获取向量的某一维度"""

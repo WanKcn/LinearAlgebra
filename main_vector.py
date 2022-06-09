@@ -9,8 +9,8 @@ if __name__ == "__main__":
         print("vec[{}] = {}".format(i, vec[i]), end=" ")
     print(repr(vec))
 
-    vec1 = Vector([5, 3])
-    vec2 = Vector([2, 1])
+    vec1 = Vector([5, 2])
+    vec2 = Vector([3, 1])
     vec3 = Vector([4, 2])
 
     print("{} + {} = {}".format(vec1, vec2, vec1 + vec2))
@@ -24,3 +24,16 @@ if __name__ == "__main__":
     print(zero2)
     # 任意向量+零向量等于它本身
     print("{} + {} = {}".format(vec1, zero2, vec1 + zero2))
+
+    # 求模
+    print("norm({}) = {}".format(vec, vec.norm()))
+    print("norm({}) = {}".format(vec2, vec2.norm()))
+    print("norm({}) = {}".format(zero2, zero2.norm()))
+
+    # 单位向量
+    print("normalize({}) = {}".format(vec1, vec1.normalize()))
+    print("normalize({}) = {}".format(vec2, vec2.normalize()))
+
+    # 单位向量求模应该为1
+    print(vec1.normalize().norm())
+    print(vec2.normalize().norm())
