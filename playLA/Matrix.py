@@ -46,3 +46,11 @@ class Matrix:
         return "Matrix({})".format(self._values)
 
     __str__ = __repr__
+
+    # 矩阵运算
+    def __add__(self, other):
+        """返回两个矩阵的加法运算"""
+        assert self.shape() == other.shape(), \
+            "Error in adding. Shape of matrix must be same."
+        return Matrix([[a + b for a, b in zip(self.row_vector(i), other.row_vector(i))]
+                       for i in range(self.row_num())])
